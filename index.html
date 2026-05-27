@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>中江 哲夫 — Portfolio | データ × マーケティングの伴走者</title>
+<meta name="description" content="マーケティングプランナー × データアナリスト 中江 哲夫のポートフォリオ。電通YR 27年のブランドマーケティング経験と、Python・データ分析の実装力を融合し、中小企業・NPOのデータ活用を伴走します。" />
+<meta name="keywords" content="中江哲夫, ダイアローグ研究所, データ分析, マーケティング, ポートフォリオ, Python, 伴走支援" />
+<meta name="author" content="中江 哲夫 / 株式会社ダイアローグ研究所" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="中江 哲夫 — Portfolio | データ × マーケティングの伴走者" />
+<meta property="og:description" content="マーケティングプランナー × データアナリスト 中江 哲夫のポートフォリオ。3つの分析事例と提供サービスをまとめました。" />
+<meta property="og:url" content="https://tetsuN-0320.github.io/" />
+<meta property="og:image" content="https://tetsuN-0320.github.io/assets/og.png" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:site_name" content="Tetsuo Nakae Portfolio" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="中江 哲夫 — Portfolio" />
+<meta name="twitter:description" content="マーケティングプランナー × データアナリスト 中江 哲夫のポートフォリオ。" />
+<meta name="twitter:image" content="https://tetsuN-0320.github.io/assets/og.png" />
+
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --c-navy: #0F2C5C;
+    --c-blue: #1E5BAC;
+    --c-orange: #FF8C32;
+    --c-yellow: #FFC857;
+    --c-warm: #FCF8F2;
+    --c-warm-2: #F5EDE1;
+    --c-warm-accent: #CE662A;
+    --c-ink: #1B1B1B;
+    --c-ink-soft: #4A5568;
+    --c-line: #E5E0D6;
+    --c-bg: #FFFFFF;
+    --radius: 14px;
+    --shadow-sm: 0 2px 8px rgba(15, 44, 92, 0.06);
+    --shadow-md: 0 12px 32px rgba(15, 44, 92, 0.10);
+    --max: 1100px;
+    --pad: clamp(16px, 4vw, 32px);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, -apple-system, sans-serif;
+    color: var(--c-ink);
+    background: var(--c-bg);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--c-blue); text-decoration: none; transition: color .2s ease; }
+  a:hover { color: var(--c-warm-accent); }
+
+  /* ===== Header ===== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--c-line);
+  }
+  .site-header__inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 14px var(--pad);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    color: var(--c-navy);
+    letter-spacing: .02em;
+    font-size: 18px;
+  }
+  .brand__mark {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-blue) 100%);
+    color: #fff;
+    display: grid; place-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+  }
+  .nav { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+  .nav a {
+    color: var(--c-ink);
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .04em;
+  }
+  .nav a:hover { color: var(--c-navy); }
+  @media (max-width: 640px) {
+    .nav { gap: 14px; font-size: 13px; }
+  }
+
+  /* ===== Section ===== */
+  section { padding: 96px 0; scroll-margin-top: 72px; }
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+  }
+  .section-title {
+    font-family: "Inter", "Noto Sans JP", sans-serif;
+    color: var(--c-navy);
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: .04em;
+    margin: 0 0 8px;
+  }
+  .section-sub {
+    color: var(--c-ink-soft);
+    font-size: 14px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin: 0 0 32px;
+  }
+  .divider {
+    width: 48px; height: 4px;
+    background: var(--c-orange);
+    border-radius: 2px;
+    margin: 0 0 28px;
+  }
+
+  /* ===== Hero / PROFILE ===== */
+  .hero {
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(30,91,172,0.10), transparent 60%),
+      linear-gradient(180deg, var(--c-warm) 0%, #fff 100%);
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  .hero__inner {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 720px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+  }
+  .avatar {
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 30%, #ffffff 0%, #f0e8d6 60%, var(--c-warm-2) 100%);
+    border: 4px solid #fff;
+    box-shadow: var(--shadow-md);
+    display: grid; place-items: center;
+    color: var(--c-navy);
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    letter-spacing: -.04em;
+    overflow: hidden;
+    justify-self: center;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 {
+    font-family: "Inter", "Noto Sans JP", sans-serif;
+    color: var(--c-navy);
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+    margin: 0 0 8px;
+    letter-spacing: .02em;
+  }
+  .hero__role {
+    color: var(--c-warm-accent);
+    font-weight: 700;
+    letter-spacing: .08em;
+    font-size: 15px;
+    margin: 0 0 18px;
+  }
+  .hero__meta {
+    color: var(--c-ink-soft);
+    font-size: 14px;
+    margin: 0 0 16px;
+  }
+  .hero__lead {
+    font-size: 16px;
+    color: var(--c-ink);
+    margin: 0 0 24px;
+    max-width: 60ch;
+  }
+  .hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--c-navy);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: var(--shadow-sm);
+    transition: transform .15s ease, background .2s ease;
+  }
+  .hero__cta:hover {
+    background: var(--c-blue);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  /* ===== About text ===== */
+  .about p { margin: 0 0 1.2em; }
+  .about__highlight {
+    background: var(--c-warm);
+    border-left: 4px solid var(--c-orange);
+    padding: 20px 24px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 24px 0;
+    font-size: 15px;
+    color: var(--c-ink);
+  }
+
+  /* ===== SKILL ===== */
+  .skill-bg { background: var(--c-warm); }
+  .legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 8px 16px;
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 0 0 32px;
+    font-size: 13px;
+    color: var(--c-ink-soft);
+  }
+  .legend strong { color: var(--c-navy); }
+  .legend .stars { color: var(--c-orange); letter-spacing: 2px; }
+
+  .skill-group { margin-bottom: 36px; }
+  .skill-group h3 {
+    color: var(--c-navy);
+    font-size: 18px;
+    margin: 0 0 4px;
+    letter-spacing: .04em;
+  }
+  .skill-group p.note {
+    color: var(--c-ink-soft);
+    font-size: 13px;
+    margin: 0 0 14px;
+  }
+  table.skill-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  table.skill-table th,
+  table.skill-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--c-line);
+    font-size: 14px;
+  }
+  table.skill-table tr:last-child td { border-bottom: 0; }
+  table.skill-table th {
+    background: var(--c-navy);
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: .06em;
+    font-size: 13px;
+  }
+  .stars { color: var(--c-orange); letter-spacing: 3px; font-family: "Inter", sans-serif; }
+  .stars-dim { color: #D9D2C5; }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .cert-grid li {
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--c-ink);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .cert-grid li::before {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--c-orange);
+    flex: none;
+  }
+
+  /* ===== SERVICES ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+  .service-card {
+    background: linear-gradient(180deg, #fff 0%, var(--c-warm) 100%);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 24px 22px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  .service-card__num {
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    color: var(--c-orange);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: .12em;
+    margin-bottom: 8px;
+  }
+  .service-card h3 {
+    margin: 0 0 10px;
+    color: var(--c-navy);
+    font-size: 18px;
+  }
+  .service-card p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--c-ink-soft);
+    line-height: 1.8;
+  }
+
+  /* ===== WORKS ===== */
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+  }
+  .work {
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .work:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .work__cover {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-blue) 100%);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .work__cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255,200,87,0.18), transparent 35%),
+      radial-gradient(circle at 80% 80%, rgba(255,140,50,0.18), transparent 40%);
+  }
+  .work__cover-text {
+    position: relative;
+    z-index: 1;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3vw, 26px);
+    letter-spacing: .04em;
+    line-height: 1.3;
+  }
+  .work__cover-sub {
+    position: relative;
+    z-index: 1;
+    margin-top: 8px;
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--c-yellow);
+  }
+  .work--warm .work__cover {
+    background: linear-gradient(135deg, var(--c-warm-accent) 0%, var(--c-orange) 100%);
+  }
+  .work--mid .work__cover {
+    background: linear-gradient(135deg, #1E5BAC 0%, #4F8FE6 100%);
+  }
+  .work__body {
+    padding: 22px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .work__tag {
+    display: inline-block;
+    background: var(--c-warm);
+    color: var(--c-warm-accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
+  .work h3 {
+    margin: 0 0 10px;
+    color: var(--c-navy);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .work p {
+    margin: 0 0 14px;
+    font-size: 14px;
+    color: var(--c-ink-soft);
+    flex: 1;
+  }
+  .work__stack {
+    font-size: 12px;
+    color: var(--c-ink-soft);
+    margin: 0 0 16px;
+  }
+  .work__stack code {
+    background: var(--c-warm);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: var(--c-navy);
+    margin-right: 4px;
+  }
+  .work__links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background .2s ease, color .2s ease;
+  }
+  .btn-link--primary {
+    background: var(--c-navy);
+    color: #fff;
+  }
+  .btn-link--primary:hover {
+    background: var(--c-blue);
+    color: #fff;
+  }
+  .btn-link--ghost {
+    background: transparent;
+    border: 1px solid var(--c-line);
+    color: var(--c-navy);
+  }
+  .btn-link--ghost:hover {
+    background: var(--c-warm);
+    color: var(--c-navy);
+  }
+
+  /* ===== Company callout ===== */
+  .company-callout {
+    margin-top: 36px;
+    background: var(--c-navy);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 28px 28px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .company-callout { grid-template-columns: 1fr; }
+  }
+  .company-callout h3 {
+    margin: 0 0 6px;
+    color: #fff;
+    font-size: 18px;
+  }
+  .company-callout p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+  }
+  .company-callout a.btn-link--primary {
+    background: var(--c-orange);
+    color: #fff;
+  }
+  .company-callout a.btn-link--primary:hover {
+    background: var(--c-yellow);
+    color: var(--c-navy);
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-bg {
+    background: linear-gradient(180deg, #fff 0%, var(--c-warm) 100%);
+  }
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .contact-list li {
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .contact-list .ico {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: var(--c-warm);
+    color: var(--c-navy);
+    display: grid; place-items: center;
+    font-weight: 700;
+    flex: none;
+  }
+  .contact-list .label {
+    color: var(--c-ink-soft);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    margin: 0 0 2px;
+  }
+  .contact-list a {
+    color: var(--c-navy);
+    font-weight: 700;
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    background: var(--c-navy);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 28px var(--pad);
+    font-size: 13px;
+    letter-spacing: .04em;
+  }
+  footer .brand { color: #fff; justify-content: center; margin-bottom: 6px; }
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="#" class="brand">
+      <span class="brand__mark">DI</span>
+      <span>Tetsuo Nakae</span>
+    </a>
+    <nav class="nav" aria-label="グローバルナビ">
+      <a href="#profile">PROFILE</a>
+      <a href="#skill">SKILL</a>
+      <a href="#services">SERVICES</a>
+      <a href="#works">WORKS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO / PROFILE ===== -->
+<section id="profile" class="hero">
+  <div class="container hero__inner">
+    <div class="avatar" aria-label="プロフィール写真">
+      <!-- 写真差し替え用: assets/profile.jpg を置けば自動で表示されます -->
+      <img src="assets/profile.jpg" alt="中江 哲夫" onerror="this.style.display='none'; this.parentElement.textContent='TN';" />
+    </div>
+    <div>
+      <p class="hero__role">MARKETING PLANNER × DATA ANALYST</p>
+      <h1>中江 哲夫 <span style="font-size:.55em; color:var(--c-ink-soft); font-weight:500;">Tetsuo Nakae</span></h1>
+      <p class="hero__meta">東京・荒川区 / 株式会社ダイアローグ研究所 代表取締役</p>
+      <p class="hero__lead">
+        広告会社で27年間ブランドマーケティングに従事し、その後ダイアローグ研究所を設立してEコマースとDXの伴走を続けて18年。
+        近年は Python と GitHub によるデータ分析の実装力を新たに獲得し、
+        <strong>「マーケッターとして数字を意思決定に翻訳してきた経験」</strong> と
+        <strong>「アナリストとしてデータを生み出しAIと組み合わせて活かす実装力」</strong> の両輪で、
+        中小企業・NPOのデータ活用を伴走しています。
+      </p>
+      <a href="#works" class="hero__cta">作品を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT (詳細プロフィール) ===== -->
+<section class="about" style="padding-top: 40px;">
+  <div class="container">
+    <p class="section-sub">ABOUT</p>
+    <h2 class="section-title">経歴とこれから</h2>
+    <div class="divider"></div>
+    <p>
+      1957年生まれ。慶應義塾大学法学部政治学科を卒業後、大日本印刷株式会社を経て、
+      Dentsu Young &amp; Rubicam Inc.（電通YR）に27年間在籍。アカウントプランナー、マーケティングプランナー、
+      ディレクター、ブランドリサーチ・ディレクターとして、コンシューマー調査とブランド戦略の現場に携わってきました。
+    </p>
+    <p>
+      2008年に独立し、株式会社ダイアローグ研究所を設立。代表取締役として、中小企業のEコマース事業開発・運営コンサルティング、
+      業務用アプリの開発などを18年間続けています。
+    </p>
+    <div class="about__highlight">
+      <strong>転機は、データ分析の実装力を改めて学び直したこと。</strong><br />
+      Pythonエンジニア認定基礎・データ分析、Google Data Analyticsプロフェッショナル認定証、Google AI Essentials 専門講座を相次いで取得。
+      公的統計API・楽天API・Stack Overflow APIなどを使った3つのデータ分析ポートフォリオを GitHub Pages で公開し、
+      従来のブランドマーケティング知見と、データ・AIの実装力を「ひとつの窓口」で提供できる体制を整えました。
+    </div>
+    <p>
+      今、中小企業の経営者の皆様には「データを活かしたい、けれど何から始めればよいか分からない」という戸惑いがあります。
+      そんな最初の一歩のご相談から、2週間程度のパイロットからでも、お受けしています。
+    </p>
+  </div>
+</section>
+
+<!-- ===== SKILL ===== -->
+<section id="skill" class="skill-bg">
+  <div class="container">
+    <p class="section-sub">SKILL</p>
+    <h2 class="section-title">スキル & 資格</h2>
+    <div class="divider"></div>
+
+    <div class="legend">
+      <div><strong>「レベル」の説明</strong></div>
+      <div><span class="stars">★★★★★</span> 製品品質レベル</div>
+      <div><span class="stars">★★★★<span class="stars-dim">★</span></span> 一般公開レベル</div>
+      <div><span class="stars">★★★<span class="stars-dim">★★</span></span> 業務改善レベル</div>
+      <div><span class="stars">★★<span class="stars-dim">★★★</span></span> 個人利用レベル</div>
+      <div><span class="stars">★<span class="stars-dim">★★★★</span></span> とりあえずレベル</div>
+    </div>
+
+    <div class="skill-group">
+      <h3>マーケティング・リサーチ</h3>
+      <p class="note">30年以上の実務経験。電通YR 27年＋ダイアローグ研究所 18年。</p>
+      <table class="skill-table">
+        <thead><tr><th>領域</th><th>年数</th><th>レベル</th></tr></thead>
+        <tbody>
+          <tr><td>ブランドリサーチ・ブランド戦略</td><td>30年+</td><td><span class="stars">★★★★★</span></td></tr>
+          <tr><td>マーケティング・プランニング</td><td>30年+</td><td><span class="stars">★★★★★</span></td></tr>
+          <tr><td>コンシューマー・調査設計／分析</td><td>27年</td><td><span class="stars">★★★★★</span></td></tr>
+          <tr><td>Eコマース事業開発・運営コンサル</td><td>18年</td><td><span class="stars">★★★★<span class="stars-dim">★</span></span></td></tr>
+          <tr><td>ビジネスコーチング</td><td>10年+</td><td><span class="stars">★★★★<span class="stars-dim">★</span></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="skill-group">
+      <h3>データ分析・実装</h3>
+      <p class="note">近年集中的に学び直した領域。3つのポートフォリオ作品で実装力を証明済み。</p>
+      <table class="skill-table">
+        <thead><tr><th>領域</th><th>主な用途</th><th>レベル</th></tr></thead>
+        <tbody>
+          <tr><td>Python</td><td>API取得・前処理・可視化・モデリング</td><td><span class="stars">★★★<span class="stars-dim">★★</span></span></td></tr>
+          <tr><td>pandas / NumPy / scikit-learn</td><td>データ加工・集計・クラスタリング</td><td><span class="stars">★★★<span class="stars-dim">★★</span></span></td></tr>
+          <tr><td>時系列予測（Prophet / ARIMA / コーホート要因法）</td><td>人口・需要予測</td><td><span class="stars">★★★<span class="stars-dim">★★</span></span></td></tr>
+          <tr><td>テキストマイニング（TF-IDF / HDBSCAN）</td><td>レビュー・質問本文の分析</td><td><span class="stars">★★★<span class="stars-dim">★★</span></span></td></tr>
+          <tr><td>可視化（Plotly / D3.js / Folium）</td><td>インタラクティブダッシュボード</td><td><span class="stars">★★★<span class="stars-dim">★★</span></span></td></tr>
+          <tr><td>Git / GitHub / GitHub Pages</td><td>バージョン管理・公開</td><td><span class="stars">★★★<span class="stars-dim">★★</span></span></td></tr>
+          <tr><td>外部API活用（e-Stat / 楽天 / Stack Exchange）</td><td>公的統計・EC・QAデータ取得</td><td><span class="stars">★★★★<span class="stars-dim">★</span></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="skill-group">
+      <h3>生成AI・ドキュメント</h3>
+      <p class="note">マーケティング知見と組み合わせ、提案書・記事・分析レポートの内製化を支援。</p>
+      <table class="skill-table">
+        <thead><tr><th>領域</th><th>用途</th><th>レベル</th></tr></thead>
+        <tbody>
+          <tr><td>ChatGPT / Claude などの生成AI活用</td><td>提案書・記事・要約・コーディング補助</td><td><span class="stars">★★★★<span class="stars-dim">★</span></span></td></tr>
+          <tr><td>Markdown / WordPress / Lightning</td><td>サイト構築・ブログ運用</td><td><span class="stars">★★★★<span class="stars-dim">★</span></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="skill-group">
+      <h3>資格・認定</h3>
+      <ul class="cert-grid">
+        <li>IT パスポート</li>
+        <li>基本情報技術者</li>
+        <li>Python エンジニア認定基礎</li>
+        <li>Python エンジニア認定データ分析</li>
+        <li>通販エキスパート検定 1級<br />（カスタマー・セントリシティ）</li>
+        <li>英検 準1級</li>
+        <li>自動車普通免許</li>
+        <li>データ分析マスター認定<br />（ピーシーアシスト株式会社）</li>
+        <li>Google Data Analytics<br />プロフェッショナル認定証（Coursera）</li>
+        <li>Google AI Essentials 専門講座（Coursera）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="container">
+    <p class="section-sub">SERVICES</p>
+    <h2 class="section-title">提供サービス（4本柱）</h2>
+    <div class="divider"></div>
+    <p style="margin:0 0 32px; max-width: 60ch; color: var(--c-ink-soft);">
+      株式会社ダイアローグ研究所として提供しているサービスです。中小企業オーナー・NPO代表のみなさまに、
+      <strong>「スピード」と「特化」</strong>を武器にした伴走支援を提供しています。
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-card__num">01</span>
+        <h3>EC支援</h3>
+        <p>事業計画づくりから商品設計、運営オペレーション、CRM施策まで。
+          中小企業ならではのニッチ商材を、購買データに基づいて最適化します。</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card__num">02</span>
+        <h3>DX導入</h3>
+        <p>業務プロセスの可視化、SaaS導入、内製化支援。
+          「何から始めるか」の見極めと、現場に根付くまでの伴走をワンセットで。</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card__num">03</span>
+        <h3>ビジネスコーチング</h3>
+        <p>経営者・幹部の意思決定を、対話と問いかけで支援。
+          ブランド戦略・マーケティング・組織課題まで、外部視点でセカンドオピニオンを提供。</p>
+      </div>
+      <div class="service-card">
+        <span class="service-card__num">04</span>
+        <h3>データ活用の伴走支援 <small style="color:var(--c-orange); font-size:11px;">NEW</small></h3>
+        <p>「データを活かしたいが踏み出せない」組織のタスクフォースとして、
+          データ整備から分析・可視化、意思決定への翻訳までを伴走します。
+          プロジェクトの一部からでも対応可能。</p>
+      </div>
+    </div>
+
+    <div class="company-callout">
+      <div>
+        <h3>株式会社ダイアローグ研究所</h3>
+        <p>会社としてのサービス詳細・お客様事例・お問い合わせは、コーポレートサイトをご覧ください。</p>
+      </div>
+      <a href="https://dken.jp/" target="_blank" rel="noopener" class="btn-link btn-link--primary">dken.jp を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORKS ===== -->
+<section id="works" class="skill-bg">
+  <div class="container">
+    <p class="section-sub">WORKS</p>
+    <h2 class="section-title">データ分析ポートフォリオ</h2>
+    <div class="divider"></div>
+    <p style="margin:0 0 32px; max-width: 60ch; color: var(--c-ink-soft);">
+      公的統計・EC・QAサイトの3つの異なるデータソースで、
+      <strong>API取得 → 前処理 → モデリング → インタラクティブ可視化</strong> の一連の流れを実装しました。
+      いずれも GitHub Pages で公開しています。
+    </p>
+
+    <div class="works-grid">
+
+      <!-- Work 1 -->
+      <article class="work">
+        <a href="https://tetsuN-0320.github.io/estat-population-forecast/" target="_blank" rel="noopener" class="work__cover">
+          <div>
+            <div class="work__cover-text">日本の人口動態予測<br />1990 – 2050</div>
+            <div class="work__cover-sub">e-Stat × Forecast</div>
+          </div>
+        </a>
+        <div class="work__body">
+          <span class="work__tag">公的統計 × 時系列予測</span>
+          <h3>e-Stat 人口動態予測</h3>
+          <p>過去30年の都道府県別人口データを e-Stat API から取得し、コーホート要因法・Prophet・ARIMA の3モデルで2050年の人口を予測。
+            インタラクティブな日本地図と人口ピラミッドアニメーションで「日本の未来」を可視化。</p>
+          <p class="work__stack">
+            <code>Python</code><code>pandas</code><code>Prophet</code><code>Folium</code><code>Plotly</code>
+          </p>
+          <div class="work__links">
+            <a class="btn-link btn-link--primary" href="https://tetsuN-0320.github.io/estat-population-forecast/" target="_blank" rel="noopener">サイトを見る</a>
+            <a class="btn-link btn-link--ghost" href="https://github.com/tetsuN-0320/estat-population-forecast" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Work 2 -->
+      <article class="work work--warm">
+        <a href="https://tetsun-0320.github.io/furusato-nozei-trends/" target="_blank" rel="noopener" class="work__cover">
+          <div>
+            <div class="work__cover-text">ふるさと納税<br />トレンド分析</div>
+            <div class="work__cover-sub">Rakuten × 総務省</div>
+          </div>
+        </a>
+        <div class="work__body">
+          <span class="work__tag">EC × 市場分析</span>
+          <h3>ふるさと納税 人気返礼品トレンド分析</h3>
+          <p>楽天ウェブサービスと総務省「ふるさと納税に関する現況調査」を組み合わせ、
+            カテゴリ別人気・価格帯戦略・還元率・自治体タイプ別成功パターン（K-means）の4つの切り口で分析。</p>
+          <p class="work__stack">
+            <code>Python</code><code>scikit-learn</code><code>K-means</code><code>Plotly</code>
+          </p>
+          <div class="work__links">
+            <a class="btn-link btn-link--primary" href="https://tetsun-0320.github.io/furusato-nozei-trends/" target="_blank" rel="noopener">サイトを見る</a>
+            <a class="btn-link btn-link--ghost" href="https://github.com/tetsuN-0320/furusato-nozei-trends" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Work 3 -->
+      <article class="work work--mid">
+        <a href="https://tetsuN-0320.github.io/stackoverflow-learner-pitfalls/" target="_blank" rel="noopener" class="work__cover">
+          <div>
+            <div class="work__cover-text">Stack Overflow<br />学習者つまづき分析</div>
+            <div class="work__cover-sub">Text Mining × Network</div>
+          </div>
+        </a>
+        <div class="work__body">
+          <span class="work__tag">テキストマイニング × ネットワーク</span>
+          <h3>Stack Overflow 学習者つまづき分析</h3>
+          <p>マクロ（言語の盛衰）→ メゾ（タグ共起ネットワーク）→ ミクロ（質問本文クラスタリング）の3層分析。
+            スクロールテリング型SPAで、IT業界の学習・採用市場への示唆を導く。</p>
+          <p class="work__stack">
+            <code>Python</code><code>TF-IDF</code><code>HDBSCAN</code><code>D3.js</code>
+          </p>
+          <div class="work__links">
+            <a class="btn-link btn-link--primary" href="https://tetsuN-0320.github.io/stackoverflow-learner-pitfalls/" target="_blank" rel="noopener">サイトを見る</a>
+            <a class="btn-link btn-link--ghost" href="https://github.com/tetsuN-0320/stackoverflow-learner-pitfalls" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact-bg">
+  <div class="container">
+    <p class="section-sub">CONTACT</p>
+    <h2 class="section-title">お問い合わせ</h2>
+    <div class="divider"></div>
+    <p style="margin:0 0 28px; max-width: 60ch; color: var(--c-ink-soft);">
+      「うちの規模でも、データ活用やAI導入は本当にできるのだろうか」――
+      そんな最初の一歩のご相談から、お受けしています。お気軽にご連絡ください。
+    </p>
+
+    <ul class="contact-list">
+      <li>
+        <span class="ico">@</span>
+        <div>
+          <p class="label">Email</p>
+          <a href="mailto:nakaetetsuo@gmail.com?subject=お問い合わせ（Portfolio）">nakaetetsuo@gmail.com</a>
+        </div>
+      </li>
+      <li>
+        <span class="ico">W</span>
+        <div>
+          <p class="label">Corporate Site</p>
+          <a href="https://dken.jp/" target="_blank" rel="noopener">dken.jp</a>
+        </div>
+      </li>
+      <li>
+        <span class="ico">in</span>
+        <div>
+          <p class="label">LinkedIn</p>
+          <a href="https://www.linkedin.com/in/tetsuo-nakae/" target="_blank" rel="noopener">LinkedIn プロフィール</a>
+		  <!-- www.linkedin.com/in/tetsuo-nakae-->
+        </div>
+      </li>
+      <li>
+        <span class="ico">GH</span>
+        <div>
+          <p class="label">GitHub</p>
+          <a href="https://github.com/tetsuN-0320" target="_blank" rel="noopener">github.com/tetsuN-0320</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">
+    <span class="brand__mark">DI</span>
+    <span>Tetsuo Nakae</span>
+  </div>
+  <div>&copy; 2026 中江 哲夫 / 株式会社ダイアローグ研究所</div>
+</footer>
+
+</body>
+</html>
