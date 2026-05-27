@@ -490,6 +490,71 @@
     color: var(--c-navy);
   }
 
+  /* ===== Book card (著書) ===== */
+  .book-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .book-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  @media (max-width: 640px) {
+    .book-card {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 22px;
+      text-align: center;
+    }
+  }
+  .book-card__cover {
+    width: 200px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 44, 92, 0.18);
+    background: var(--c-warm);
+    justify-self: center;
+    line-height: 0;
+  }
+  .book-card__cover img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .book-card__title {
+    margin: 0 0 6px;
+    color: var(--c-navy);
+    font-size: 22px;
+    line-height: 1.4;
+    letter-spacing: .02em;
+  }
+  .book-card__sub {
+    font-size: 16px;
+    color: var(--c-ink-soft);
+    font-weight: 500;
+  }
+  .book-card__meta {
+    margin: 0 0 14px;
+    color: var(--c-warm-accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .08em;
+  }
+  .book-card__desc {
+    margin: 0;
+    color: var(--c-ink);
+    font-size: 14.5px;
+    line-height: 1.85;
+  }
+
   /* ===== Company callout ===== */
   .company-callout {
     margin-top: 36px;
@@ -860,6 +925,25 @@
         </div>
       </article>
 
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 64px;">
+    <p class="section-sub">PUBLICATION</p>
+    <h2 class="section-title">著書</h2>
+    <div class="divider"></div>
+
+    <div class="book-card">
+      <div class="book-card__cover">
+        <img src="assets/self_marketing.png" alt="セルフ マーケティング 自分のポジションを無理せず高める実践術 表紙" />
+      </div>
+      <div class="book-card__body">
+        <h3 class="book-card__title">セルフ マーケティング<br /><span class="book-card__sub">― 自分のポジションを無理せず高める実践術</span></h3>
+        <p class="book-card__meta">2010年　シーアンドアール研究所</p>
+        <p class="book-card__desc">
+          本書は、マーケティングの考え方を使って、自分をプロデュースする方法「セルフマーケティング」を解説します。
+        </p>
+      </div>
     </div>
   </div>
 </section>
